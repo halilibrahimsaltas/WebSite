@@ -191,14 +191,14 @@ header .navbar ul li a:hover{
     justify-content: center;
     flex-wrap: wrap;
     padding: 1rem 0;
-
-
 }
 
 .about .row .info{
-    flex: 1 1 48rem;
+    flex: 1 1 48%;
     padding: 2rem 1rem;
-    padding: 6rem;
+    padding-left: 8rem;
+    padding-top: 8rem;
+    box-sizing: border-box;
 
 }
 
@@ -213,40 +213,168 @@ header .navbar ul li a:hover{
     color: #eee;
     padding: 0 .5rem;
 }
-
-.about .row .counter{
-    flex: 1 1 48rem;
+.about .row .skills-section {
+    flex: 1 1 45%; /* Allow the skills section to take up 45% of the available space */
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
+    flex-direction: column; /* Stack the header and the counter vertically */
+    align-items: center; /* Center items horizontally */
 }
 
-.about .row .counter .box{
-    width: 20rem;
+.about .row .skills-section .skills {
+    font-size: 3rem;
+    color: var(--yellow);
+    padding: 1rem 0;
+    font-weight: normal;
+    text-align: center;
+}
+
+.about .row .skills-section .counter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow the boxes to wrap */
+    width: 100%;
+}
+
+.about .row .skills-section .counter .box {
+    width: 15rem;
     background: #222;
     text-align: center;
     padding: 2rem;
-    margin: 2rem;
-}
-
-.about .row .counter .box{
+    margin: 1%;
     font-size: 4rem;
-    color:var(--yellow) ;
-
+    color: var(--yellow);
+    border-radius: 1rem;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    overflow: hidden;
 }
-.about .row .counter .box{
-    font-size: 4rem;
-    color:var(--yellow) ;
 
-}
-.about .row .counter .box img{
-    height:10rem ;
+.about .row .skills-section .counter .box img {
+    height: 10rem;
     width: 10rem;
+    border-radius: 1rem;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.about .row .skills-section .counter .box:hover img {
+    transform: scale(1.2);
+}
+.education .box-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+    padding-left: 3rem;
+
+}
+
+
+.education .box-container .box{
+    width: 27rem;
+    margin: 4rem 1rem;
+    padding-left: 4rem;
+    border-left: .2rem solid #fff;
+    position: relative;
+}
+
+.education .box-container .box span{
+    font-size: 1.3rem;
+    background: #222;
+    color: #fff;
+    border-radius: 5rem;
+    padding: .5rem 2.5rem;
+}
+
+.education .box-container .box h3{
+    font-size: 2rem;
+    color: #fff;
+    padding-top: 1.5rem;
+
+}
+.education .box-container .box p{
+    font-size: 1.4rem;
+    color: #eee;
+    padding:1rem 0;
+    
+}
+
+.education .box-container .box i{
+    position: absolute;
+    top: -1.5em;left: -2.5rem;
+    height: 5rem;
+    width: 5rem;
     border-radius: 50%;
+    line-height: 5rem;
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    background:var(--yellow);
+}
+
+.education .box-container .box{
+    width: 100%;
+}
+
+.portfolio .box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+
+}
+.portfolio .box-container .box{
+    width: 40rem;
+    background: #222;
+    text-align: center;
+    padding: 2rem;
+    margin-right: 6rem;
+    margin-left: 6rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 2rem;
+    font-size: 2.5rem;
+    color:#fff ;
+    border-radius: 1rem;
     object-fit: cover;
     margin-bottom: 1-rem;
+    overflow: hidden;
 }
+
+.portfolio .box-container .box:hover img{
+    transform: scale(1.2) ;
+    cursor: pointer;
+
+}
+
+.portfolio .box-container .box img{
+    height:20rem;
+    width: 35rem;
+    object-fit:scale-down;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
