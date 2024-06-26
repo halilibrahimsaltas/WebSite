@@ -320,6 +320,7 @@ header .navbar ul li a:hover{
 }
 
 .portfolio .box-container{
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -356,6 +357,107 @@ header .navbar ul li a:hover{
     width: 35rem;
     object-fit:scale-down;
 
+}
+
+
+.projects .box-container{
+    width: 50%; /* Half of the page width */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+    padding-left: 3rem;
+
+}
+
+
+.projects .box-container .box{
+    display: flex;
+    flex-direction: column;
+    width: 27rem;
+    margin: 4rem 1rem;
+    padding-left: 4rem;
+    border-left: .2rem solid #fff;
+    position: relative;
+    width: 100%;
+}
+
+.projects .box-container .box img{
+
+    height: 8rem;
+    width: 8rem;
+    border-radius: 1rem;
+    object-fit:scale-down;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+
+.projects .box-container .box:hover img {
+    transform: scale(1.2);
+}
+
+
+
+.projects .box-container .box span{
+    position: absolute;
+    top: 2em;left: 13rem;
+    font-size: 1.3rem;
+    background: #222;
+    color: #fff;
+    border-radius: 5rem;
+    padding: .5rem 2.5rem;
+}
+
+.projects .box-container .box h3{
+    position: absolute;
+    top: 1rem;left: 23rem;
+    font-size: 2rem;
+    color: #fff;
+    padding-top: 1.5rem;
+
+}
+
+.projects .box-container .box p{
+    font-size: 1.4rem;
+    color: #eee;
+    padding:2rem 0;
+    
+}
+.projects .box-container .box h4{
+    position: absolute;
+    top: 3rem;left: 60rem;
+    font-size: 1.5rem;
+    background: #222;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5rem;
+    padding: .5rem 2.5rem;
+    text-align: center; /* Center text inside the h4 */
+    width: 20%; /* Ensure h4 takes the full width of the box */
+    box-sizing:border-box; /* Include padding in the width */
+    margin: 0; /* Remove default margin */
+}
+
+.projects .box-container .box h4 a {
+    color: #fff; /* Link color */
+    text-decoration: none; /* Remove underline from link */
+    display: block; /* Ensure the link takes the full size of h4 */
+    width: 100%; /* Ensure the link takes the full width of h4 */
+    height: 100%; /* Ensure the link takes the full height of h4 */
+    box-sizing: border-box; /* Include padding in the width */
+    padding: .5rem 2.5rem; /* Ensure padding inside the link */
+    border-radius: 5rem; /* Apply border radius to the link */
+}
+
+.projects .box-container .box:hover h4 a{
+    color: var(--yellow);
+}
+
+.projects .box-container .box h4 a:visited {
+    color: #fff; /* Keep the link color the same after it's visited */
 }
 
 
@@ -417,6 +519,23 @@ header .navbar ul li a:hover{
     font-size: 50%;
 
    }
+
+    .projects .box-container {
+        display: flex; /* Use Flexbox for the container */
+        flex-direction: column; /* Arrange boxes in a column */
+        align-items: center; /* Center align boxes horizontally */
+        justify-content: center; /* Center align boxes vertically */
+    }
+
+    .projects .box-container .box {
+        width: 100%; /* Full width for smaller screens */
+        padding: 0.5rem; /* Adjust padding for smaller screens */
+    }
+
+    .projects .box-container .box h4 {
+        font-size: 1.2rem; /* Adjust font size for smaller screens */
+        padding: .5rem 1.5rem; /* Adjust padding for smaller screens */
+    }
 }
 
 @media (max-width:400px){
@@ -427,7 +546,36 @@ header .navbar ul li a:hover{
         margin: 0 3rem;
     }
     .about .row .counter .box{
-        width: 100%;}
+        width: 100%;
+    }
+
+    .education .box-container .box{
+        width: 100%;
+    }
+
+    .portfolio .box-container .box img{
+        object-fit:cover;
+        width: 100%;
+    }
+
+    .projects .box-container {
+        display: flex; /* Use Flexbox for the container */
+        flex-direction: column; /* Arrange boxes in a column */
+        align-items: center; /* Center align boxes horizontally */
+        justify-content: center; /* Center align boxes vertically */
+    }
+
+    .projects .box-container .box {
+        width: 100%; /* Full width for smaller screens */
+        padding: 0.5rem; /* Adjust padding for smaller screens */
+    }
+
+    .projects .box-container .box h4 {
+        display: flex;
+        font-size: 1.2rem; /* Adjust font size for smaller screens */
+        padding: .5rem 1.5rem; /* Adjust padding for smaller screens */
+    }
+
 }
 
 
