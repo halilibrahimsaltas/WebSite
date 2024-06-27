@@ -384,7 +384,6 @@ header .navbar ul li a:hover{
 }
 
 .projects .box-container .box img{
-
     height: 8rem;
     width: 8rem;
     border-radius: 1rem;
@@ -450,6 +449,7 @@ header .navbar ul li a:hover{
     box-sizing: border-box; /* Include padding in the width */
     padding: .5rem 2.5rem; /* Ensure padding inside the link */
     border-radius: 5rem; /* Apply border radius to the link */
+   
 }
 
 .projects .box-container .box:hover h4 a{
@@ -460,8 +460,97 @@ header .navbar ul li a:hover{
     color: #fff; /* Keep the link color the same after it's visited */
 }
 
+.contact .row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.contact .row .content{
+    flex:1 1 30rem;
+    padding:4rem;
+    padding-bottom: 0;
+}
+
+.contact .row form{
+    flex: 1 1 45rem;
+    padding: 2rem;
+    margin:2rem;
+    margin-bottom: 4rem;
+}
+
+.contact .row form .box{
+    padding: 1.5rem;
+    margin: 1rem 0;
+    background: #3333;
+    color: #fff;
+    text-transform: none;
+    font-size: 1.7rem;
+    width: 100%;
+}
+.contact .row form .box::placeholder{
+    text-transform: capitalize;
+
+}
+
+.contact .row form .message{
+    height: 15rem;
+    resize: none;
+
+}
+
+.contact .row .content .title{
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 3rem;
+    padding-bottom: 2rem;
+}
+
+.contact .row .content .info h3{
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    color: #eee;
+    padding: 1rem 0;
+    font-weight: normal;
+}
+
+.contact .row .content .info h3 i{
+    padding-right: 1rem;
+    color: var(--yellow);
+
+}
+.contact .row .content .info h3 a{
+    margin-right: 1rem;
+    color: var(--yellow);
+
+}
+
+.contact .row .content .info h3 a:visited{
+    color:var(--yellow)
+}
+
+.contact .row .content .info .lower{
+    text-transform: lowercase;
+}
+
+.top{
+    position: fixed;
+    bottom:7.5rem ; right: 2rem;
+    z-index: 100;
+    display: none;
+}
+.top img{
+    height: 4rem;
+    width: 4rem;
 
 
+}
+.top:hover img {
+    transform: scale(1.2);
+}
 
 
 
@@ -574,6 +663,9 @@ header .navbar ul li a:hover{
         display: flex;
         font-size: 1.2rem; /* Adjust font size for smaller screens */
         padding: .5rem 1.5rem; /* Adjust padding for smaller screens */
+    }
+    .contact .row form{
+        margin: 3rem 0;
     }
 
 }
