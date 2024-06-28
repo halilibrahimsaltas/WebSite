@@ -130,6 +130,17 @@ header .navbar ul{
     padding: 1rem 3rem;
 
 }
+.message{
+    position: sticky;
+    top: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--yellow);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+}
 
 
 header .navbar ul li a{
@@ -426,7 +437,7 @@ header .navbar ul li a:hover{
     
 }
 .projects .box-container .box h4{
-    position: absolute;
+    position:absolute;
     top: 3rem;left: 60rem;
     font-size: 1.5rem;
     background: #222;
@@ -440,17 +451,8 @@ header .navbar ul li a:hover{
     margin: 0; /* Remove default margin */
 }
 
-.projects .box-container .box h4 a {
-    color: #fff; /* Link color */
-    text-decoration: none; /* Remove underline from link */
-    display: block; /* Ensure the link takes the full size of h4 */
-    width: 100%; /* Ensure the link takes the full width of h4 */
-    height: 100%; /* Ensure the link takes the full height of h4 */
-    box-sizing: border-box; /* Include padding in the width */
-    padding: .5rem 2.5rem; /* Ensure padding inside the link */
-    border-radius: 5rem; /* Apply border radius to the link */
-   
-}
+
+ 
 
 .projects .box-container .box:hover h4 a{
     color: var(--yellow);
@@ -525,7 +527,10 @@ header .navbar ul li a:hover{
 .contact .row .content .info h3 a{
     margin-right: 1rem;
     color: var(--yellow);
-
+    transition: .6s linear !important;
+}
+.contact .row .content .info h3 a:hover{
+    transform: rotate(360deg);
 }
 
 .contact .row .content .info h3 a:visited{
@@ -535,6 +540,8 @@ header .navbar ul li a:hover{
 .contact .row .content .info .lower{
     text-transform: lowercase;
 }
+
+
 
 .top{
     position: fixed;
@@ -584,6 +591,11 @@ header .navbar ul li a:hover{
     .home{
         padding:1rem 4rem;
     }
+    .projects .box-container .box h4 {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+        padding: .5rem .5rem; /* Adjust padding for smaller screens */
+    }
+
 }
 
 @media (max-width:991px){
@@ -599,6 +611,10 @@ header .navbar ul li a:hover{
     }
     body{
         padding: 0%;
+    }
+    .projects .box-container .box h4 {
+        font-size: 1.3rem; /* Adjust font size for smaller screens */
+        padding: .5rem .5rem; /* Adjust padding for smaller screens */
     }
 }
 
@@ -622,8 +638,10 @@ header .navbar ul li a:hover{
     }
 
     .projects .box-container .box h4 {
-        font-size: 1.2rem; /* Adjust font size for smaller screens */
-        padding: .5rem 1.5rem; /* Adjust padding for smaller screens */
+        position: absolute;
+        top: 10rem;left: 40rem;
+        font-size: 1.4rem; /* Adjust font size for smaller screens */
+        padding: .5rem .5rem; /* Adjust padding for smaller screens */
     }
 }
 
@@ -657,12 +675,14 @@ header .navbar ul li a:hover{
     .projects .box-container .box {
         width: 100%; /* Full width for smaller screens */
         padding: 0.5rem; /* Adjust padding for smaller screens */
+
     }
 
     .projects .box-container .box h4 {
-        display: flex;
+        position: absolute;
+        top: 15rem;left: 30rem;
         font-size: 1.2rem; /* Adjust font size for smaller screens */
-        padding: .5rem 1.5rem; /* Adjust padding for smaller screens */
+        padding: 0.5rem 0.5rem; /* Adjust padding for smaller screens */
     }
     .contact .row form{
         margin: 3rem 0;
