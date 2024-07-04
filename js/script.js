@@ -46,7 +46,7 @@ $(document).ready(function(){
 
         $.ajax({
             type: 'POST',
-            url: 'submit_form.php',
+            url: 'index.php',
             data: formData,
             success: function(response) {
                 alert('Your message has been sent successfully!');

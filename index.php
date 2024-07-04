@@ -1,9 +1,42 @@
+<?php
+$servername = "localhost";
+$username = "halilsal_contact_db";
+$password = "u6b47wzCfgcswCLRr5Vv";
+$dbname = "halilsal_contact_db";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+if (isset($_POST['send'])) {
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $topic = mysqli_real_escape_string($conn, $_POST['topic']);
+    $message = mysqli_real_escape_string($conn, $_POST['message']);
+
+    $select_message = mysqli_query($conn, "SELECT * FROM contact_form WHERE name='$name' AND email='$email' AND topic='$topic' AND message='$message'") or die('Query failed');
+
+    if (mysqli_num_rows($select_message) > 0) {
+        $message[] = 'Message sent already!';
+    } else {
+        mysqli_query($conn, "INSERT INTO contact_form (name, email, topic, message) VALUES ('$name', '$email', '$topic', '$message')") or die('Query failed');
+        $message[] = 'Message sent successfully!';
+    }
+}
+// Close connection
+mysqli_close($conn);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>responsive personal prtfolio website design </title>
+    <title>Halil İbrahim SALTAŞ </title>
 
     <!--font awsome cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -13,6 +46,20 @@
 
 </head>
 <body>
+
+<?php
+
+if (isset($$message)) {
+    foreach ($message as $message) {
+        echo '
+        <div class="message">
+            <span>'.$message.'</span>
+            <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+        </div>
+        ';
+    }
+}
+?>
 
 
 
@@ -64,9 +111,8 @@
 
     <h3>HI THERE</h3>
     <h1>I'M <span>Halil İbrahim SALTAŞ</span></h1>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum,
-         consequatur eaque aliquid ullam delectus commodi porro 
-       hic quas iste eius.</p>
+    <p>I am a mechanical engineer, currently  trying to be a software developer and working on Stack Overflow Clone project while using Angular, Spring Boot and MySQL.
+   </p>
     <a href="#about"><button class="btn">about me <i class="fas fa-user"></i></button></a>
 
 
@@ -89,7 +135,7 @@
             <h3><span>qualification: </span> BMS</h3>
             <h3><span>post: </span>Backend Developer</h3>
             <h3><span>language: </span>Turkish</h3>
-            <a href="#"><button class="btn">dowland CV <i class="fas fa-dowload"> </i></button></a>
+            <a href="https://drive.google.com/file/d/1mL9X3ukStdyygoNDCSoSJuJvdFjNLIBc/view" target="_blank"><button class="btn">dowland CV <i class="fas fa-dowload"> </i></button></a>
 
         </div>
 
@@ -154,30 +200,23 @@
 
   <div class="box">
     <i class="fas fa-graduation-cap"></i>
-    <span>2024</span>
-    <h3>patika dev</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, corrupti.</p>
-  </div>
-
-  <div class="box">
-    <i class="fas fa-graduation-cap"></i>
     <span>2022</span>
     <h3>yıldız technical university</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, corrupti.</p>
+    <p>mechanical Engineering (bachelor's degree & 2.80)--İstanbul</p>
   </div>
 
   <div class="box">
     <i class="fas fa-graduation-cap"></i>
     <span>2017</span>
     <h3>yıldız technical university</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, corrupti.</p>
+    <p>mechatronics Engineering (Bachelor's Degree)--İstanbul</p>
   </div>
 
   <div class="box">
     <i class="fas fa-graduation-cap"></i>
     <span>2015</span>
     <h3>çan fen lisesi</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, corrupti.</p>
+    <p>--Çanakkale</p>
   </div>
 
 </div>
@@ -291,12 +330,12 @@
 
         </div>
 
-        <form action="submit_form.php" method="post">
-            <input type="text" name="name" placeholder="name" class="box">
-            <input type="email" name="email" placeholder="email" class="box">
-            <input type="text" name="topic" placeholder="topic" class="box">
+        <form action="index.php" method="post">
+            <input type="text" name="name" placeholder="name" class="box" required>
+            <input type="email" name="email" placeholder="email" class="box" required>
+            <input type="text" name="topic" placeholder="topic" class="box" required>
             <textarea name="message" cols="30" rows="10" class="box message" placeholder="message"></textarea>
-            <input type="submit" class="btn" value="send" name="send"> <i class="fas fa-paper-palne"></i> </input>
+            <input type="submit" class="btn" value="send"  name="send" > </input>
         </form>
     </div>
 </section>
