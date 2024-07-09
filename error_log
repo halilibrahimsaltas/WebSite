@@ -1,0 +1,8 @@
+[07-Jul-2024 03:33:07 Europe/Istanbul] PHP Fatal error:  Uncaught Error: [] operator not supported for strings in /home/halilsal/domains/halilsaltas.com/public_html/index.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/halilsal/domains/halilsaltas.com/public_html/index.php on line 27
+[07-Jul-2024 21:00:08 Europe/Istanbul] PHP Fatal error:  Uncaught Error: [] operator not supported for strings in /home/halilsal/domains/halilsaltas.com/public_html/index.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/halilsal/domains/halilsaltas.com/public_html/index.php on line 27

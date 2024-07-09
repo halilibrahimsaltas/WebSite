@@ -4,57 +4,60 @@
 /*
 Font size and colour settings
 */
-:root{
-    --yellow:#f9ca24;
+:root {
+    --yellow: #f9ca24;
 }
 
-*{
+* {
     font-family: "Nunito", sans-serif;
 
-    margin:0;padding: 0;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    outline: none; border: none;
+    outline: none;
+    border: none;
     text-transform: capitalize;
     transition: all .2s linear;
 }
 
-*::selection{
+*::selection {
     background: var(--yellow);
     color: #333;
 
 }
 
 /* scroll bar settings*/
-html{
+html {
     font-size: 62.5%;
-    overflow-x:hidden;
+    overflow-x: hidden;
 }
 
-html::-webkit-scrollbar{
+html::-webkit-scrollbar {
     width: 1.4rem;
 }
-html::-webkit-scrollbar-track{
+
+html::-webkit-scrollbar-track {
     background: #222;
 }
 
-html::-webkit-scrollbar-thumb{
+html::-webkit-scrollbar-thumb {
     background: var(--yellow);
 }
 
-body{
+body {
     background: #111;
     overflow-x: hidden;
     padding-left: 35rem;
 
 }
 
-section{
+section {
     min-height: 100vh;
     padding: 1rem;
 }
 
-.btn{
+.btn {
     padding: .7rem 3rem;
     background: #333;
     color: #fff;
@@ -65,32 +68,34 @@ section{
 }
 
 
-.btn i{
+.btn i {
     padding: 0 .5rem;
     font-size: 1.8rem;
 
 }
 
-.btn:hover{
+.btn:hover {
     background: var(--yellow);
 }
 
-.heading{
-    text-align:  center;
+.heading {
+    text-align: center;
     margin: 0 6rem;
     font-size: 4rem;
-    padding:1rem;
+    padding: 1rem;
     border-bottom: .1rem solid #fff4;
     color: #fff;
 }
 
-.heading span{
+.heading span {
     color: var(--yellow);
 
 }
-header{
+
+header {
     position: fixed;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     z-index: 1000;
     height: 100%;
     width: 35rem;
@@ -98,39 +103,40 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-flow:column;
+    flex-flow: column;
     text-align: center;
 }
 
-header .user img{
-    height:17rem ;
+header .user img {
+    height: 17rem;
     width: 17rem;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 1-rem;
-    border:.7rem solid var(--yellow)
+    border: .7rem solid var(--yellow)
 }
 
-header .user .name{
+header .user .name {
     font-size: 3.5rem;
     color: #fff;
 }
 
-header .user .post{
+header .user .post {
     font-size: 2rem;
     color: #eee;
 }
 
-header .navbar{
-    width:100% ;
+header .navbar {
+    width: 100%;
 }
 
-header .navbar ul{
+header .navbar ul {
     list-style: none;
     padding: 1rem 3rem;
 
 }
-.message{
+
+.message {
     position: sticky;
     top: 2rem;
     max-width: 1200px;
@@ -140,26 +146,33 @@ header .navbar ul{
     align-items: center;
     justify-content: space-between;
     padding: 2rem;
+    font-size: 2rem;
+
+}
+
+.message i {
+    cursor: pointer;
 }
 
 
-header .navbar ul li a{
+header .navbar ul li a {
     display: block;
     padding: 1rem;
     margin: 1.5rem 0;
     background-color: #333;
     color: #fff;
     font-size: 2rem;
-    border-radius:  5rem;
+    border-radius: 5rem;
 }
 
-header .navbar ul li a:hover{
+header .navbar ul li a:hover {
     background: var(--yellow);
 }
 
-#menu{
+#menu {
     position: fixed;
-    top:2rem; right:2rem;
+    top: 2rem;
+    right: 2rem;
     background: #333;
     color: #fff;
     cursor: pointer;
@@ -168,35 +181,37 @@ header .navbar ul li a:hover{
     z-index: 1000;
     display: none;
 }
-.home{
+
+.home {
     display: flex;
     justify-content: center;
     flex-flow: column;
     padding: 0 15rem;
 }
 
-.home h3{
+.home h3 {
     font-size: 2.5rem;
     color: #fff;
 
 }
 
-.home h1{
+.home h1 {
     font-size: 5rem;
     color: #fff;
-    
-}
-.home p{
-    font-size:2rem;
-    color: #eee;
-    
+
 }
 
-.home h1 span{
+.home p {
+    font-size: 2rem;
+    color: #eee;
+
+}
+
+.home h1 span {
     color: var(--yellow);
 }
 
-.about .row{
+.about .row {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -204,7 +219,7 @@ header .navbar ul li a:hover{
     padding: 1rem 0;
 }
 
-.about .row .info{
+.about .row .info {
     flex: 1 1 48%;
     padding: 2rem 1rem;
     padding-left: 8rem;
@@ -213,22 +228,26 @@ header .navbar ul li a:hover{
 
 }
 
-.about .row .info h3{
+.about .row .info h3 {
     font-size: 2rem;
     color: var(--yellow);
     padding: 1rem 0;
     font-weight: normal;
 }
 
-.about .row .info h3 span{
+.about .row .info h3 span {
     color: #eee;
     padding: 0 .5rem;
 }
+
 .about .row .skills-section {
-    flex: 1 1 45%; /* Allow the skills section to take up 45% of the available space */
+    flex: 1 1 45%;
+    /* Allow the skills section to take up 45% of the available space */
     display: flex;
-    flex-direction: column; /* Stack the header and the counter vertically */
-    align-items: center; /* Center items horizontally */
+    flex-direction: column;
+    /* Stack the header and the counter vertically */
+    align-items: center;
+    /* Center items horizontally */
 }
 
 .about .row .skills-section .skills {
@@ -242,7 +261,8 @@ header .navbar ul li a:hover{
 .about .row .skills-section .counter {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Allow the boxes to wrap */
+    flex-wrap: wrap;
+    /* Allow the boxes to wrap */
     width: 100%;
 }
 
@@ -273,7 +293,8 @@ header .navbar ul li a:hover{
 .about .row .skills-section .counter .box:hover img {
     transform: scale(1.2);
 }
-.education .box-container{
+
+.education .box-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -284,7 +305,7 @@ header .navbar ul li a:hover{
 }
 
 
-.education .box-container .box{
+.education .box-container .box {
     width: 27rem;
     margin: 4rem 1rem;
     padding-left: 4rem;
@@ -292,7 +313,7 @@ header .navbar ul li a:hover{
     position: relative;
 }
 
-.education .box-container .box span{
+.education .box-container .box span {
     font-size: 1.3rem;
     background: #222;
     color: #fff;
@@ -300,22 +321,24 @@ header .navbar ul li a:hover{
     padding: .5rem 2.5rem;
 }
 
-.education .box-container .box h3{
+.education .box-container .box h3 {
     font-size: 2rem;
     color: #fff;
     padding-top: 1.5rem;
 
 }
-.education .box-container .box p{
+
+.education .box-container .box p {
     font-size: 1.4rem;
     color: #eee;
-    padding:1rem 0;
-    
+    padding: 1rem 0;
+
 }
 
-.education .box-container .box i{
+.education .box-container .box i {
     position: absolute;
-    top: -1.5em;left: -2.5rem;
+    top: -1.5em;
+    left: -2.5rem;
     height: 5rem;
     width: 5rem;
     border-radius: 50%;
@@ -323,15 +346,15 @@ header .navbar ul li a:hover{
     text-align: center;
     font-size: 2rem;
     color: #fff;
-    background:var(--yellow);
+    background: var(--yellow);
 }
 
-.education .box-container .box{
+.education .box-container .box {
     width: 100%;
 }
 
-.portfolio .box-container{
-    
+.portfolio .box-container {
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -339,7 +362,8 @@ header .navbar ul li a:hover{
     padding: 2rem 0;
 
 }
-.portfolio .box-container .box{
+
+.portfolio .box-container .box {
     width: 40rem;
     background: #222;
     text-align: center;
@@ -350,29 +374,30 @@ header .navbar ul li a:hover{
     margin-bottom: 2rem;
     border-radius: 2rem;
     font-size: 2.5rem;
-    color:#fff ;
+    color: #fff;
     border-radius: 1rem;
     object-fit: cover;
     margin-bottom: 1-rem;
     overflow: hidden;
 }
 
-.portfolio .box-container .box:hover img{
-    transform: scale(1.2) ;
+.portfolio .box-container .box:hover img {
+    transform: scale(1.2);
     cursor: pointer;
 
 }
 
-.portfolio .box-container .box img{
-    height:20rem;
+.portfolio .box-container .box img {
+    height: 20rem;
     width: 35rem;
-    object-fit:scale-down;
+    object-fit: scale-down;
 
 }
 
 
-.projects .box-container{
-    width: 50%; /* Half of the page width */
+.projects .box-container {
+    width: 50%;
+    /* Half of the page width */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -383,7 +408,7 @@ header .navbar ul li a:hover{
 }
 
 
-.projects .box-container .box{
+.projects .box-container .box {
     display: flex;
     flex-direction: column;
     width: 27rem;
@@ -394,11 +419,11 @@ header .navbar ul li a:hover{
     width: 100%;
 }
 
-.projects .box-container .box img{
+.projects .box-container .box img {
     height: 8rem;
     width: 8rem;
     border-radius: 1rem;
-    object-fit:scale-down;
+    object-fit: scale-down;
     margin-bottom: 1rem;
     overflow: hidden;
     cursor: pointer;
@@ -411,9 +436,10 @@ header .navbar ul li a:hover{
 
 
 
-.projects .box-container .box span{
+.projects .box-container .box span {
     position: absolute;
-    top: 2em;left: 13rem;
+    top: 2em;
+    left: 13rem;
     font-size: 1.3rem;
     background: #222;
     color: #fff;
@@ -421,48 +447,53 @@ header .navbar ul li a:hover{
     padding: .5rem 2.5rem;
 }
 
-.projects .box-container .box h3{
+.projects .box-container .box h3 {
     position: absolute;
-    top: 1rem;left: 23rem;
+    top: 1rem;
+    left: 23rem;
     font-size: 2rem;
     color: #fff;
     padding-top: 1.5rem;
 
 }
 
-.projects .box-container .box p{
+.projects .box-container .box p {
     font-size: 1.4rem;
     color: #eee;
-    padding:2rem 0;
-    
+    padding: 2rem 0;
+
 }
-.projects .box-container .box h4{
-    position:absolute;
-    top: 3rem;left: 60rem;
+
+.projects .box-container .box h4 {
+    position: absolute;
+    top: 3rem;
+    left: 60rem;
     font-size: 1.5rem;
     background: #222;
     color: #fff;
     cursor: pointer;
     border-radius: 5rem;
     padding: .5rem 2.5rem;
-    text-align: center; /* Center text inside the h4 */
-    width: 20%; /* Ensure h4 takes the full width of the box */
-    box-sizing:border-box; /* Include padding in the width */
-    margin: 0; /* Remove default margin */
+    text-align: center;
+    /* Center text inside the h4 */
+    width: 20%;
+    /* Ensure h4 takes the full width of the box */
+    box-sizing: border-box;
+    /* Include padding in the width */
+    margin: 0;
+    /* Remove default margin */
 }
 
-
- 
-
-.projects .box-container .box:hover h4 a{
+.projects .box-container .box:hover h4 a {
     color: var(--yellow);
 }
 
 .projects .box-container .box h4 a:visited {
-    color: #fff; /* Keep the link color the same after it's visited */
+    color: #fff;
+    /* Keep the link color the same after it's visited */
 }
 
-.contact .row{
+.contact .row {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -470,20 +501,20 @@ header .navbar ul li a:hover{
 
 }
 
-.contact .row .content{
-    flex:1 1 30rem;
-    padding:4rem;
+.contact .row .content {
+    flex: 1 1 30rem;
+    padding: 4rem;
     padding-bottom: 0;
 }
 
-.contact .row form{
+.contact .row form {
     flex: 1 1 45rem;
     padding: 2rem;
-    margin:2rem;
+    margin: 2rem;
     margin-bottom: 4rem;
 }
 
-.contact .row form .box{
+.contact .row form .box {
     padding: 1.5rem;
     margin: 1rem 0;
     background: #3333;
@@ -492,25 +523,26 @@ header .navbar ul li a:hover{
     font-size: 1.7rem;
     width: 100%;
 }
-.contact .row form .box::placeholder{
+
+.contact .row form .box::placeholder {
     text-transform: capitalize;
 
 }
 
-.contact .row form .message{
+.contact .row form .message {
     height: 15rem;
     resize: none;
 
 }
 
-.contact .row .content .title{
+.contact .row .content .title {
     text-transform: uppercase;
     color: #fff;
     font-size: 3rem;
     padding-bottom: 2rem;
 }
 
-.contact .row .content .info h3{
+.contact .row .content .info h3 {
     display: flex;
     align-items: center;
     font-size: 2rem;
@@ -519,29 +551,31 @@ header .navbar ul li a:hover{
     font-weight: normal;
 }
 
-.contact .row .content .info h3 i{
+.contact .row .content .info h3 i {
     padding-right: 1rem;
     color: var(--yellow);
 
 }
-.contact .row .content .info h3 a{
+
+.contact .row .content .info h3 a {
     margin-right: 1rem;
     color: var(--yellow);
     transition: .6s linear !important;
 }
-.contact .row .content .info h3 a:hover{
+
+.contact .row .content .info h3 a:hover {
     transform: rotate(360deg);
 }
 
-.contact .row .content .info h3 a:visited{
-    color:var(--yellow)
+.contact .row .content .info h3 a:visited {
+    color: var(--yellow)
 }
 
-.contact .row .content .info .lower{
+.contact .row .content .info .lower {
     text-transform: lowercase;
 }
 
-.message{
+.message {
     position: sticky;
     top: 2rem;
     max-width: 1200px;
@@ -550,28 +584,31 @@ header .navbar ul li a:hover{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding:  2rem;
+    padding: 2rem;
     font-size: 2rem;
 }
 
-.message i{
+.message i {
     cursor: pointer;
 }
 
 
 
-.top{
+.top {
     position: fixed;
-    bottom:7.5rem ; right: 2rem;
+    bottom: 7.5rem;
+    right: 2rem;
     z-index: 100;
     display: none;
 }
-.top img{
+
+.top img {
     height: 4rem;
     width: 4rem;
 
 
 }
+
 .top:hover img {
     transform: scale(1.2);
 }
@@ -601,111 +638,252 @@ header .navbar ul li a:hover{
 
 /* media queries*/
 
-@media (max-width:1200px){
-    html{
+@media (max-width:1200px) {
+    html {
         font-size: 55%;
     }
-    .home{
-        padding:1rem 4rem;
+
+    .home {
+        padding: 1rem 4rem;
     }
+
     .projects .box-container .box h4 {
-        font-size: 1.5rem; /* Adjust font size for smaller screens */
-        padding: .5rem .5rem; /* Adjust padding for smaller screens */
+        font-size: 1.5rem;
+        /* Adjust font size for smaller screens */
+        padding: .5rem .5rem;
+        /* Adjust padding for smaller screens */
     }
 
 }
 
-@media (max-width:991px){
-    header{
-        left:-120%;
+@media (max-width:991px) {
+    header {
+        left: -120%;
     }
-    #menu{
+
+    #menu {
         display: block;
     }
 
-    header.toggle{
-        left:0%;
+    header.toggle {
+        left: 0%;
     }
-    body{
+
+    body {
         padding: 0%;
     }
+
     .projects .box-container .box h4 {
-        font-size: 1.3rem; /* Adjust font size for smaller screens */
-        padding: .5rem .5rem; /* Adjust padding for smaller screens */
+        font-size: 1.3rem;
+        /* Adjust font size for smaller screens */
+        padding: .5rem .5rem;
+        /* Adjust padding for smaller screens */
     }
 }
 
-@media (max-width:768px){
+@media (max-width:768px) {
 
-   html{
-    font-size: 50%;
+    html {
+        font-size: 50%;
 
-   }
+    }
 
     .projects .box-container {
-        display: flex; /* Use Flexbox for the container */
-        flex-direction: column; /* Arrange boxes in a column */
-        align-items: center; /* Center align boxes horizontally */
-        justify-content: center; /* Center align boxes vertically */
+        display: flex;
+        /* Use Flexbox for the container */
+        flex-direction: column;
+        /* Arrange boxes in a column */
+        align-items: center;
+        /* Center align boxes horizontally */
+        justify-content: center;
+        /* Center align boxes vertically */
     }
 
     .projects .box-container .box {
-        width: 100%; /* Full width for smaller screens */
-        padding: 0.5rem; /* Adjust padding for smaller screens */
+        width: 100%;
+        /* Full width for smaller screens */
+        padding: 0.5rem;
+        /* Adjust padding for smaller screens */
     }
 
     .projects .box-container .box h4 {
         position: absolute;
-        top: 10rem;left: 40rem;
-        font-size: 1.4rem; /* Adjust font size for smaller screens */
-        padding: .5rem .5rem; /* Adjust padding for smaller screens */
+        top: 10rem;
+        left: 40rem;
+        font-size: 1.4rem;
+        /* Adjust font size for smaller screens */
+        padding: .5rem .5rem;
+        /* Adjust padding for smaller screens */
     }
 }
 
-@media (max-width:400px){
-    header{
+@media (max-width:530px) {
+
+    html {
+        font-size: 50%;
+
+    }
+
+    .about .row {
+        flex-direction: column;
+        /* Stack info and skills vertically */
+    }
+
+    .about .row .counter .box {
+        width: 100%;
+    }
+
+    .about .row .info,
+    .about .row .skills-section {
+        flex: 1 1 100%;
+        /* Make each section take full width */
+        padding: 1rem;
+        /* Add some padding for spacing */
+    }
+
+    .projects .box-container {
+        display: flex;
+        /* Use Flexbox for the container */
+        flex-direction: column;
+        /* Arrange boxes in a column */
+        align-items: center;
+        /* Center align boxes horizontally */
+        justify-content: center;
+        /* Center align boxes vertically */
+    }
+
+    .projects .box-container .box {
+        width: 100%;
+        /* Full width for smaller screens */
+        padding: 0.5rem;
+        /* Adjust padding for smaller screens */
+    }
+
+    .projects .box-container .box h4 {
+        position: relative;
+        /* Change to relative for better positioning */
+        top: auto;
+        /* Reset the top position */
+        left: auto;
+        /* Reset the left position */
+        background: #222;
+        color: #fff;
+        font-size: 1.5rem;
+        /* Adjust font size for smaller screens */
+        padding: 1rem;
+        /* Adjust padding for better appearance */
+        text-align: center;
+        /* Center text inside the h4 */
+        width: auto;
+        /* Allow the width to adjust to content */
+        box-sizing: border-box;
+        /* Include padding in the width */
+        margin: 1rem 0;
+        /* Add margin for spacing */
+        display: inline-block;
+        /* Ensure it wraps around the content */
+        white-space: nowrap;
+        /* Prevent text from breaking */
+        overflow: hidden;
+        /* Hide any overflowing content */
+        text-overflow: ellipsis;
+        /* Add ellipsis for overflowing text */
+    }
+}
+
+
+
+@media (max-width:400px) {
+    header {
         width: 100vw;
     }
-    .heading{
+
+    .heading {
         margin: 0 3rem;
     }
-    .about .row .counter .box{
+
+    .about .row {
+        flex-direction: column;
+        /* Stack info and skills vertically */
+    }
+
+    .about .row .counter .box {
         width: 100%;
     }
 
-    .education .box-container .box{
+    .about .row .info,
+    .about .row .skills-section {
+        flex: 1 1 100%;
+        /* Make each section take full width */
+        padding: 1rem;
+        /* Add some padding for spacing */
+    }
+
+    .education .box-container .box {
         width: 100%;
     }
 
-    .portfolio .box-container .box img{
-        object-fit:cover;
+    .portfolio .box-container .box img {
         width: 100%;
     }
 
     .projects .box-container {
-        display: flex; /* Use Flexbox for the container */
-        flex-direction: column; /* Arrange boxes in a column */
-        align-items: center; /* Center align boxes horizontally */
-        justify-content: center; /* Center align boxes vertically */
+        display: flex;
+        /* Use Flexbox for the container */
+        flex-direction: column;
+        /* Arrange boxes in a column */
+        align-items: center;
+        /* Center align boxes horizontally */
+        justify-content: center;
+        /* Center align boxes vertically */
     }
 
     .projects .box-container .box {
-        width: 100%; /* Full width for smaller screens */
-        padding: 0.5rem; /* Adjust padding for smaller screens */
+        width: 100%;
+        /* Full width for smaller screens */
+        padding: 0.5rem;
+        /* Adjust padding for smaller screens */
 
     }
 
     .projects .box-container .box h4 {
-        position: absolute;
-        top: 15rem;left: 30rem;
-        font-size: 1.2rem; /* Adjust font size for smaller screens */
-        padding: 0.5rem 0.5rem; /* Adjust padding for smaller screens */
+        position: relative;
+        /* Change to relative for better positioning */
+        top: auto;
+        /* Reset the top position */
+        left: auto;
+        /* Reset the left position */
+        background: #222;
+        color: #fff;
+        font-size: 1.5rem;
+        /* Adjust font size for smaller screens */
+        padding: 1rem;
+        /* Adjust padding for better appearance */
+        text-align: center;
+        /* Center text inside the h4 */
+        width: auto;
+        /* Allow the width to adjust to content */
+        box-sizing: border-box;
+        /* Include padding in the width */
+        margin: 1rem 0;
+        /* Add margin fosr spacing */
+        display: inline-block;
+        /* Ensure it wraps around the content */
+        white-space: nowrap;
+        /* Prevent text from breaking */
+        overflow: hidden;
+        /* Hide any overflowing content */
+        text-overflow: ellipsis;
+        /* Add ellipsis for overflowing text */
     }
-    .contact .row form{
+
+    .contact .row form {
         margin: 3rem 0;
     }
 
+    .projects .box-container .box h4 a:visited {
+        color: #fff;
+        /* Keep the link color the same after it's visited */
+    }
+
 }
-
-
-

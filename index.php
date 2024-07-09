@@ -1,11 +1,11 @@
 <?php
 $servername = "localhost";
-$username = "halilsal_contact_db";
-$password = "u6b47wzCfgcswCLRr5Vv";
-$dbname = "halilsal_contact_db";
+$username = "root";
+$password = "";
+$dbname = "contact_db";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if (!$conn) {
@@ -18,13 +18,15 @@ if (isset($_POST['send'])) {
     $topic = mysqli_real_escape_string($conn, $_POST['topic']);
     $message = mysqli_real_escape_string($conn, $_POST['message']);
 
-    $select_message = mysqli_query($conn, "SELECT * FROM contact_form WHERE name='$name' AND email='$email' AND topic='$topic' AND message='$message'") or die('Query failed');
+    $select_message = mysqli_query($conn, "SELECT * FROM contact_form WHERE name='$name' AND email='$email' AND topic='$topic' AND message='$message'")or die('Query failed: ' . mysqli_error($conn));
+
+    $messages = [];
 
     if (mysqli_num_rows($select_message) > 0) {
-        $message[] = 'Message sent already!';
+        $messages[] = 'Message sent already!';
     } else {
-        mysqli_query($conn, "INSERT INTO contact_form (name, email, topic, message) VALUES ('$name', '$email', '$topic', '$message')") or die('Query failed');
-        $message[] = 'Message sent successfully!';
+        mysqli_query($conn, "INSERT INTO contact_form (name, email, topic, message) VALUES ('$name', '$email', '$topic', '$message')") or die('Query failed: ' . mysqli_error($conn));
+        $messages[] = 'Message sent successfully!';
     }
 }
 // Close connection
@@ -47,10 +49,10 @@ mysqli_close($conn);
 </head>
 <body>
 
-<?php
+ <?php
 
-if (isset($$message)) {
-    foreach ($message as $message) {
+ if (isset($$messages)) {
+    foreach ($$messages as $message) {
         echo '
         <div class="message">
             <span>'.$message.'</span>
@@ -58,8 +60,8 @@ if (isset($$message)) {
         </div>
         ';
     }
-}
-?>
+ }
+ ?>
 
 
 
@@ -330,11 +332,11 @@ if (isset($$message)) {
 
         </div>
 
-        <form action="index.php" method="post">
-            <input type="text" name="name" placeholder="name" class="box" required>
-            <input type="email" name="email" placeholder="email" class="box" required>
-            <input type="text" name="topic" placeholder="topic" class="box" required>
-            <textarea name="message" cols="30" rows="10" class="box message" placeholder="message"></textarea>
+        <form action="" method="post">
+            <input type="text" name="name" placeholder="name" class="box" required autocomplete="name">
+            <input type="email" name="email" placeholder="email" class="box" required autocomplete="email">
+            <input type="text" name="topic" placeholder="topic" class="box" required autocomplete="off">
+            <textarea name="message" cols="30" rows="10" class="box message" placeholder="message" autocomplete="off"></textarea>
             <input type="submit" class="btn" value="send"  name="send" > </input>
         </form>
     </div>
