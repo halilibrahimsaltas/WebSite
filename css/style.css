@@ -142,12 +142,16 @@ header .navbar ul {
     max-width: 1200px;
     margin: 0 auto;
     background-color: var(--yellow);
+    /* Use your preferred color or define a custom variable */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 2rem;
     font-size: 2rem;
-
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Optional: Adds a subtle shadow */
+    z-index: 1000;
+    /* Ensures it appears above other content */
 }
 
 .message i {
@@ -688,6 +692,14 @@ header .navbar ul li a:hover {
 
     }
 
+    .messages {
+        max-width: 100%;
+        /* Adjust width for smaller screens */
+        padding: 0.5rem;
+        /* Adjust padding for smaller screens */
+
+    }
+
     .projects .box-container {
         display: flex;
         /* Use Flexbox for the container */
@@ -721,6 +733,14 @@ header .navbar ul li a:hover {
 
     html {
         font-size: 50%;
+
+    }
+
+    .messages {
+        max-width: 100%;
+        /* Adjust width for smaller screens */
+        padding: 0.5rem;
+        /* Adjust padding for smaller screens */
 
     }
 
@@ -800,6 +820,14 @@ header .navbar ul li a:hover {
 
     .heading {
         margin: 0 3rem;
+    }
+
+    .messages {
+        max-width: 100%;
+        /* Adjust width for smaller screens */
+        padding: 0.5rem;
+        /* Adjust padding for smaller screens */
+
     }
 
     .about .row {

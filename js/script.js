@@ -1,40 +1,40 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
-    $('#menu').click(function(){
-       $(this).toggleClass('fa-times');
-       $('header').toggleClass('toggle');
+    $('#menu').click(function () {
+        $(this).toggleClass('fa-times');
+        $('header').toggleClass('toggle');
 
     });
 
-    $(window).on('scroll load',function(){
+    $(window).on('scroll load', function () {
 
         $('#menu').removeClass('fa-times');
         $('header').removeClass('toggle');
 
-        if ($(window).scrollTop()> 0){
-            $('.top').show();  
-        }else{
+        if ($(window).scrollTop() > 0) {
+            $('.top').show();
+        } else {
             $('.top').hide();
         }
 
     });
 
     //smooth scrolling
-    $('a[href*="#"').on('click',function(e){
+    $('a[href*="#"').on('click', function (e) {
 
         e.preventDefault();
 
         $('html, body').animate({
-            scrollTop : $($(this).attr('href')).offset().top,
+            scrollTop: $($(this).attr('href')).offset().top,
         },
-           500,
-           'linear'
+            500,
+            'linear'
         );
     });
 
     //form
 
-    $('form').on('submit', function(event) {
+    $('form').on('submit', function (event) {
         event.preventDefault();
 
         const formData = {
@@ -48,13 +48,25 @@ $(document).ready(function(){
             type: 'POST',
             url: 'index.php',
             data: formData,
-            success: function(response) {
-                alert('Your message has been sent successfully!');
+            success: function (response) {
+                $('.messages').html(response);
+                $('html, body').animate({ scrollTop: 0 }, 1000);
+                setupMessageDismiss();
+
             },
-            error: function(error) {
+            error: function (error) {
                 console.error('Error:', error);
-                alert('An error occurred. Please try again.');
+                $('.messages').html('<div class="message error">An error occurred. Please try again.</div>');
+                $('html, body').animate({ scrollTop: 0 }, 1000);
+                setupMessageDismiss();
             }
         });
+
+        // Function to setup dismiss behavior for message boxes
+        function setupMessageDismiss() {
+            $('.message').on('click', function () {
+                $(this).remove(); // Remove the clicked message box
+            });
+        }
     });
 });

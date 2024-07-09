@@ -11,16 +11,21 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+$name = "";
+$message = "";
+$topic = "";
+$message="";
+$messages = [];
 
-if (isset($_POST['send'])) {
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $topic = mysqli_real_escape_string($conn, $_POST['topic']);
-    $message = mysqli_real_escape_string($conn, $_POST['message']);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $conn->real_escape_string($_POST['name']);
+    $email =  $conn->real_escape_string($_POST['email']);
+    $topic = $conn->real_escape_string($_POST['topic']);
+    $message = $conn->real_escape_string($_POST['message']);
 
     $select_message = mysqli_query($conn, "SELECT * FROM contact_form WHERE name='$name' AND email='$email' AND topic='$topic' AND message='$message'")or die('Query failed: ' . mysqli_error($conn));
 
-    $messages = [];
+    
 
     if (mysqli_num_rows($select_message) > 0) {
         $messages[] = 'Message sent already!';
@@ -49,10 +54,9 @@ mysqli_close($conn);
 </head>
 <body>
 
- <?php
-
- if (isset($$messages)) {
-    foreach ($$messages as $message) {
+<?php
+if (isset($messages)) {
+    foreach ($messages as $message) {
         echo '
         <div class="message">
             <span>'.$message.'</span>
@@ -60,21 +64,16 @@ mysqli_close($conn);
         </div>
         ';
     }
- }
- ?>
+}
+?>
 
-
-
+<div class="messages"></div>
     <!--jquery cdn  link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <!--custom js file  link -->
 
     <script src="js/script.js"></script>
-
-
-
-
 
 </body>
 </html>
@@ -332,7 +331,7 @@ mysqli_close($conn);
 
         </div>
 
-        <form action="" method="post">
+        <form action="index.php" method="post">
             <input type="text" name="name" placeholder="name" class="box" required autocomplete="name">
             <input type="email" name="email" placeholder="email" class="box" required autocomplete="email">
             <input type="text" name="topic" placeholder="topic" class="box" required autocomplete="off">
@@ -341,6 +340,8 @@ mysqli_close($conn);
         </form>
     </div>
 </section>
+
+
 
 <!--contant section ends-->
 
