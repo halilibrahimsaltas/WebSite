@@ -84,14 +84,5 @@ WebSite/
 
 #### Usage
 
-1-Open the index.html file in a web browser.
+1-Open the index.php file in a web browser.
 
-### Technologies Used
-
--HTML
-
--CSS
-
--JavaScript
-
--MySQL
