@@ -1,4 +1,4 @@
-# Kişisel Portföy Web Sitesi
+# Kişisel Portfolio Web Sitesi
 
 ## Proje Açıklaması
 
