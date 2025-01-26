@@ -7,6 +7,7 @@ $dbname = "contact_db";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+
 // Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
@@ -112,7 +113,15 @@ if (isset($messages)) {
 
     <h3>HI THERE</h3>
     <h1>I'M <span>Halil İbrahim SALTAŞ</span></h1>
-    <p>I am a mechanical engineer, currently  trying to be a software developer and working on Stack Overflow Clone project while using Angular, Spring Boot and MySQL.
+    <p>I am a mechanical engineer, despite my engineering background, I have developed a keen interest in Full Stack Web Development, acquiring skills in HTML, CSS, JavaScript, React, Java, Spring Boot, and SQL. My ability to bridge engineering principles with web development sets me apart. Actively engaging in online courses and projects, I have honed my proficiency. 
+        <br>
+        <br>
+
+     <p>
+            Now actively seeking opportunities as a Full Stack Web Developer, I am eager to apply my engineering foundation and web development skills to dynamic projects. My unique perspective, adaptability, and passion for technology make me an asset to any forward-thinking team.
+     </p>
+
+    m.
    </p>
     <a href="#about"><button class="btn">about me <i class="fas fa-user"></i></button></a>
 
@@ -136,7 +145,7 @@ if (isset($messages)) {
             <h3><span>qualification: </span> BMS</h3>
             <h3><span>post: </span>Backend Developer</h3>
             <h3><span>language: </span>Turkish</h3>
-            <a href="https://drive.google.com/file/d/1mL9X3ukStdyygoNDCSoSJuJvdFjNLIBc/view" target="_blank"><button class="btn">dowland CV <i class="fas fa-dowload"> </i></button></a>
+            <a href="https://drive.google.com/file/d/16Uy3KZ5m4l36s1nphOpbf87Bv2gCAQ7Z/view?usp=sharing" target="_blank"><button class="btn">dowland CV <i class="fas fa-dowload"> </i></button></a>
 
         </div>
 
@@ -268,7 +277,15 @@ if (isset($messages)) {
     <h1 class="heading"> my <span>projects </span> </h1>
     
     <div class="box-container">
-    
+
+    <div class="box">
+        <img src="images/veterinary.png" alt="">
+        <span>2024</span>
+        <h3>E-Commerce Microservices Project</h3>
+        <p>A modern e-commerce platform built with a hybrid architecture - combining a monolithic core with strategic microservices. </p>
+        <h4><a href="https://github.com/halilibrahimsaltas/E-commerce-Website" target="_blank">details</a></h4>
+      </div>
+
       <div class="box">
         <img src="images/veterinary.png" alt="">
         <span>2024</span>
@@ -355,4 +372,3 @@ if (isset($messages)) {
 
 
 <!--scroll section ends-->
-
